@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx3ywpoxjsuof"]
+
+[ext_resource type="Texture2D" uid="uid://uwd6m7nqtlmq" path="res://pixel adventure assets/Pixel Adventure 1/Free/Menu/Levels/50.png" id="1_jyw7g"]
+
+[node name="muerte" type="Sprite2D"]
+position = Vector2(201, 122)
+scale = Vector2(18.1842, 15.7647)
+texture = ExtResource("1_jyw7g")
