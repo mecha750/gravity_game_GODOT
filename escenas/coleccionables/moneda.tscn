@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://cviuc877mgh77"]
+
+[ext_resource type="Script" path="res://escenas/coleccionables/moneda.gd" id="1_4j0vy"]
+[ext_resource type="Texture2D" uid="uid://2uxqacilh7n7" path="res://pixel adventure assets/Pixel Adventure 1/Free/Items/Fruits/Daco_4201833.png" id="1_e4ark"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpqqy"]
+atlas = ExtResource("1_e4ark")
+region = Rect2(0, 0, 191, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2idp"]
+atlas = ExtResource("1_e4ark")
+region = Rect2(191, 0, 191, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlgtj"]
+atlas = ExtResource("1_e4ark")
+region = Rect2(382, 0, 191, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3x26k"]
+atlas = ExtResource("1_e4ark")
+region = Rect2(573, 0, 191, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0w6ib"]
+atlas = ExtResource("1_e4ark")
+region = Rect2(764, 0, 191, 171)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7n00"]
+atlas = ExtResource("1_e4ark")
+region = Rect2(955, 0, 191, 171)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mxrgo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpqqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2idp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlgtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3x26k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0w6ib")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7n00")
+}],
+"loop": true,
+"name": &"coin",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmt4d"]
+radius = 99.1816
+
+[node name="moneda" type="Area2D"]
+script = ExtResource("1_4j0vy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9, 9)
+sprite_frames = SubResource("SpriteFrames_mxrgo")
+animation = &"coin"
+autoplay = "coin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-17, 10)
+shape = SubResource("CircleShape2D_fmt4d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

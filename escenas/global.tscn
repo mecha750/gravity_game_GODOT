@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck3xre6jfcdj4"]
+
+[ext_resource type="Script" path="res://global.gd" id="1_h6r5v"]
+[ext_resource type="AudioStream" uid="uid://c0kq8kxonfubn" path="res://pixel adventure assets/Pixel Adventure 1/confirmation_002.ogg" id="2_eo1bu"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_h6r5v")
+
+[node name="coin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_eo1bu")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://mwmwx3wgbmcu"]
+
+[ext_resource type="Texture2D" uid="uid://dptwuvpey4fe6" path="res://pixel adventure assets/istockphoto-1434200223-170667a.jpg" id="1_4vgjs"]
+
+[node name="win" type="Sprite2D"]
+position = Vector2(213.826, 122)
+scale = Vector2(0.781822, 0.73807)
+texture = ExtResource("1_4vgjs")

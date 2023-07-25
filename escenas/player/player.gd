@@ -5,6 +5,10 @@ var gravity= 9
 var jump= 400
 var direccion = 0.0
 @onready var animation=$AnimatedSprite2D
+@onready var monedaslabel=$PlayerGUI/HBoxContainer/monedasLabel
+
+func _ready():
+	Global.player = self
 
 
 func _physics_process(delta):
@@ -39,11 +43,13 @@ func _physics_process(delta):
 	
 	
 	move_and_slide()
+	
+	
+
+func _on_meta_body_entered(body):
+	if body is player:
+		get_tree().change_scene_to_file("res://escenas/win/win.tscn")
 		
-
-
-	
-	
-
-
-
+		
+func actualizaInterfazMonedaz():
+	monedaslabel.text = str(Global.monedas)
